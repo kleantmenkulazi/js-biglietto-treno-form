@@ -9,6 +9,11 @@ calcBtn.addEventListener(
     function (submitEvent) {
         submitEvent.preventDefault()
         console.log('submitEvent', submitEvent, typeof submitEvent);
+
+        const errorMsg = document.getElementById('error-msg');
+        errorMsg.style.display = 'none'
+
+
     const kmInput = document.getElementById('km');
     const km = kmInput.value;
     console.log('km', km, typeof km);
@@ -22,7 +27,8 @@ calcBtn.addEventListener(
     console.log('ageInNumber', ageInNumber, typeof ageInNumber);
     
     if (isNaN(ageInNumber) || isNaN(kmInNumber)) {
-        alert('Mannaggia a te');
+        const errorMsg = document.getElementById('error-msg');
+        errorMsg.style.display = 'block'
     }
     else {
         let price = kmInNumber * 0.21;
