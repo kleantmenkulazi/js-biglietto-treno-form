@@ -3,10 +3,13 @@ console.log('JS collegato');
 
 
 
-const calcBtn = document.getElementById('calc-btn');
+const calcForm = document.querySelector('form');
 calcBtn.addEventListener(
-    'click', 
-    function () {const kmInput = document.getElementById('km');
+    'submit', 
+    function (submitEvent) {
+        submitEvent.preventDefault()
+        console.log('submitEvent', submitEvent, typeof submitEvent);
+    const kmInput = document.getElementById('km');
     const km = kmInput.value;
     console.log('km', km, typeof km);
     const kmInNumber = parseInt(km);
